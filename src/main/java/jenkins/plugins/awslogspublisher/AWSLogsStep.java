@@ -103,7 +103,8 @@ public class AWSLogsStep extends Step {
         this.logGroupName = logGroupName;
     }
 
-    @Extension @Symbol("publish_cloudwatch_logs")
+    @Extension
+    @Symbol("publish_cloudwatch_logs")
     public static class DescriptorImpl extends StepDescriptor {
 
         public DescriptorImpl() {
@@ -134,7 +135,6 @@ public class AWSLogsStep extends Step {
         }
     }
 
-
     /**
      * The execution of {@link AWSLogsStep}.
      */
@@ -151,7 +151,8 @@ public class AWSLogsStep extends Step {
 
         /**
          * Merge global config into our local copy
-         * @return
+         *
+         * @return Cofig for the AWS Logs
          */
         protected AWSLogsConfig createConfig() {
             AWSLogsConfig globalConfig = AWSLogsConfig.get();
